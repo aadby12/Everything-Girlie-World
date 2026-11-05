@@ -1,0 +1,212 @@
+@import "tailwindcss";
+
+:root {
+  --ivory: #faf6f3;
+  --blush: #f6e4e8;
+  --rose: #c96b84;
+  --rose-deep: #a84d66;
+  --ink: #121214;
+  --charcoal: #1c1c1f;
+  --muted: #6f676b;
+  --line: rgba(18, 18, 20, 0.1);
+  --line-strong: rgba(18, 18, 20, 0.2);
+  --paper: #fffdfb;
+  --accent-pop: #e85a8c;
+}
+
+@theme inline {
+  --color-ivory: var(--ivory);
+  --color-blush: var(--blush);
+  --color-rose: var(--rose);
+  --color-rose-deep: var(--rose-deep);
+  --color-ink: var(--ink);
+  --color-charcoal: var(--charcoal);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-paper: var(--paper);
+  --color-accent-pop: var(--accent-pop);
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-bodoni);
+}
+
+* {
+  border-color: var(--line);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--rose) 40%, white);
+  color: var(--ink);
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  outline-color: var(--rose);
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+}
+
+.eyebrow {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.container-page {
+  width: min(1120px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.container-wide {
+  width: min(1320px, calc(100% - 1.5rem));
+  margin-inline: auto;
+}
+
+.reveal {
+  animation: rise 0.75s ease both;
+}
+
+.reveal-delay {
+  animation-delay: 0.12s;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.image-zoom {
+  overflow: hidden;
+}
+
+.image-zoom img {
+  transition: transform 0.8s ease;
+}
+
+.image-zoom:hover img {
+  transform: scale(1.045);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 2.9rem;
+  padding: 0.75rem 1.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.btn-primary:hover {
+  background: var(--charcoal);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+}
+
+.btn-secondary:hover {
+  border-color: var(--ink);
+  background: var(--blush);
+}
+
+.btn-rose {
+  background: var(--rose);
+  color: white;
+}
+
+.btn-rose:hover {
+  background: var(--rose-deep);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  padding-inline: 0;
+  min-height: auto;
+  letter-spacing: 0.12em;
+}
+
+.btn-ghost:hover {
+  color: var(--rose-deep);
+}
+
+.section-pad {
+  padding-block: clamp(3.5rem, 7vw, 6.5rem);
+}
+
+.hairline {
+  height: 1px;
+  background: var(--line);
+}
+
+.demo-banner {
+  background: color-mix(in srgb, var(--blush) 70%, white);
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .image-zoom img,
+  .btn {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
