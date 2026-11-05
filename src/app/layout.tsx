@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, Manrope } from "next/font/google";
+import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import { BagProvider } from "@/components/bag/bag-provider";
 import { FloatingWhatsApp } from "@/components/layout/floating-whatsapp";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -7,15 +7,15 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { business } from "@/lib/business";
 import "./globals.css";
 
-const sans = Manrope({
-  variable: "--font-manrope",
+const sans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
 });
 
-const display = Bodoni_Moda({
-  variable: "--font-bodoni",
+const display = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["500", "600", "700"],
 });
 
 export const metadata: Metadata = {
