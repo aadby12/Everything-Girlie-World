@@ -7,7 +7,7 @@ export function FinalCta() {
       <div className="relative mx-auto max-w-2xl">
         <h2 className="font-display text-[clamp(2.4rem,6vw,4.2rem)] leading-[1.02]">Your Wardrobe Called.</h2>
         <p className="mt-4 text-base text-paper/75">It&apos;s time to discover something new.</p>
-        <Link href="/shop" className="btn mt-8 bg-paper text-ink hover:bg-blush">
+        <Link href="/shop" className="btn btn-hero-primary mt-8">
           Start Shopping
         </Link>
       </div>

@@ -28,8 +28,8 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
   };
 
   return (
-    <article className="group flex h-full flex-col">
-      <Link href={`/product/${product.slug}`} className="image-zoom relative block aspect-[3/4] bg-blush">
+    <article className="group flex h-full flex-col transition duration-300 hover:-translate-y-1">
+      <Link href={`/product/${product.slug}`} className="image-zoom relative block aspect-[3/4] bg-blush shadow-[0_0_0_rgba(0,0,0,0)] transition duration-300 group-hover:shadow-[0_16px_34px_rgba(18,18,20,0.12)]">
         <Image
           src={product.image}
           alt={product.name}
